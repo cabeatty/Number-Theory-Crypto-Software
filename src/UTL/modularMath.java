@@ -5,7 +5,7 @@ package UTL;
  */
 public class modularMath
 {
-	public int modulo(int n, int p)
+	public static int modulo(int n, int p)
 	{
 		int r = n%p;
 		if(((p > 0) && (r < 0)) || ((p < 0) && (r > 0)))
@@ -13,7 +13,7 @@ public class modularMath
 		return r;
 	}
 
-	public int inverse(int n, int p) {
+	public static int inverse(int n, int p) {
 		n = modulo(n, p);
 		for(int x = 1; x < p; x++)
 		{

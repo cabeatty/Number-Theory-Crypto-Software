@@ -11,10 +11,67 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
 				name: "tabbedPane1"
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {space :0:576:x}"
-					"$verticalGroup": "par l {space :0:410:x}"
+					"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::l::564:x, seq {par l {comp sigLabel:::p::p, comp titleLabel:::p:468:p}, space :0:96:x}}, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :p:17:p, comp titleLabel:::p:41:p, space :::p, comp sigLabel:::p::p, space :p:18:p, comp scrollPane1::::306:x, space :::p}}"
 				} ) {
-					name: "modularInv"
+					name: "homePanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "titleLabel"
+						"text": "Number Theory Calculator"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 18, false )
+						"enabled": false
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane1"
+						add( new FormComponent( "javax.swing.JTextPane" ) {
+							name: "textPane1"
+							"text": "The point of this simple gui is to do certian calculations within the realm of elementary Number Theory, and by extent, Formal Cryptography, that would normally be very diffacult, or at least very tedious to do by hand.  Things such as calculating the inverse of a number modulo another, doing modular exponentiation, linear congruencies, and even simple forms of encription and decription are implemented with this package in a simple, easy to use format.  The tabs above contain the actual calculators, so click on one of them to get started."
+							"editable": false
+							"font": new java.awt.Font( "Ubuntu", 0, 15 )
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "sigLabel"
+						"text": "By Colin Beatty"
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Home"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {par l {seq l {space :p:47:p, par l {seq {comp invLabel:::p::p, space :p:12:p, comp invInvField:::p:131:p, space :::p, comp modLabel:::p::p, space :::p, comp invModField:::p:131:p}, comp scrollPane2:::p:464:p}, space :0:59:x}, seq l {space :p:69:p, comp invTempField:::p:113:p, space ::304:x, comp invCompButton:::p::p}}, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :p:41:p, par b {comp invLabel::b:p::p, comp modLabel::b:p::p, comp invModField::b:p::p, comp invInvField::b:p::p}, space u:::p, comp scrollPane2:::p:275:p, space ::20:x, par b {comp invCompButton::b:p::p, comp invTempField::b:p::p}, space :::p}}"
+				} ) {
+					name: "modularInvPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "invLabel"
+						"text": "Invert"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "invInvField"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "modLabel"
+						"text": "Modulo"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "invModField"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "invCompButton"
+						"text": "Compute"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "invCompButton", true ) )
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane2"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "invAnswerArea"
+							"editable": false
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "invTempField"
+						"editable": false
+					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": "Modular Inversion"
 				} )
@@ -22,7 +79,7 @@ new FormModel {
 					"$horizontalGroup": "par l {space :0:576:x}"
 					"$verticalGroup": "par l {space :0:410:x}"
 				} ) {
-					name: "modularExp"
+					name: "modularExpPanel"
 				}, new FormLayoutConstraints( null ) {
 					"title": "Modular Exponentiation"
 				} )
