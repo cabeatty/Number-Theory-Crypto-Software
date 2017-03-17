@@ -1,0 +1,49 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {space :0:330:x}"
+			"$verticalGroup": "par l {space :0:55:x}"
+		} ) {
+			name: "this"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 330, 55 )
+		} )
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp Tabs::l:::x}"
+			"$verticalGroup": "par l {comp Tabs::l:::x}"
+		} ) {
+			name: "MainFrame"
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "Tabs"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {space :0:486:x}"
+					"$verticalGroup": "par l {space :0:355:x}"
+				} ) {
+					name: "modularInversion"
+				}, new FormLayoutConstraints( null ) {
+					"title": "Modular Inversion"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq t {space ::426:x, comp button1:::p::p, space :::p}}"
+					"$verticalGroup": "par l {seq t {space ::317:x, comp button1:::p::p, space :::p}}"
+				} ) {
+					name: "modularExp"
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button1"
+						"text": "Compute"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "accMouseReleased", true ) )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Modular Exponentiation"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 100, 80 )
+			"size": new java.awt.Dimension( 490, 410 )
+		} )
+	}
+}
